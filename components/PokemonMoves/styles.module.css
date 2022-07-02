@@ -1,0 +1,20 @@
+.movesContainer {
+	width: 75%;
+	margin: auto;
+}
+
+.movesName {
+	font-size: 15px;
+	text-transform: capitalize;
+}
+
+.movesList{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	gap: 10px;
+}
+
+.movesList p {
+	margin: 0;
+	padding: 0;
+}
