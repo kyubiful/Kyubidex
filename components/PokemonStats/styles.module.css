@@ -1,0 +1,35 @@
+.statsBar {
+	width: 80%;
+	border: 1px solid black;
+	border-radius: 20px;
+	display: flex;
+}
+
+.statsBar div {
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	border-radius: 20px 20px 20px 20px;
+	padding: 0px 10px;
+	line-height: 2.5;
+	font-size: 12px;
+}
+
+.statsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	align-items: center;
+}
+
+.statsBarContainer {
+	display: flex;
+	width: 75%;
+	height: 32px;
+	align-items: center;
+}
+
+.statusBarTitle {
+	font-size: 14px;
+	width: 110px;
+}
