@@ -1,0 +1,32 @@
+.topCase {
+  margin-bottom: -75px;
+  border-radius: 35px 35px 0px 0px;
+  z-index: 10;
+  position: relative;
+} 
+
+.bottomCase {
+  margin-top: -76px;
+  border-radius: 0px 0px 35px 35px;
+  z-index: 10;
+  margin-bottom: -4px;
+  position: relative;
+}
+
+.startButton {
+  width: 114px;
+  height: 114px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 30px;
+  border: none;
+  z-index: 20;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
