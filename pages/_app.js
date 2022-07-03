@@ -4,6 +4,8 @@ import { ButtonCase } from '../components/Case/ButtonCase'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Head from 'next/head'
+import { Provider } from 'react-redux'
+import store from '../store'
 
 import '../styles/globals.css'
 import styles from '../styles/global.module.css'
@@ -67,7 +69,9 @@ function MyApp ({ Component, pageProps, router }) {
               animate={isScreenOpen ? 'open' : 'closed'}
             >
               <AnimatePresence exitBeforeEnter>
-                <Component {...pageProps} key={router.pathname}/>
+                  <Provider store={store}>
+                    <Component {...pageProps} key={router.pathname}/>
+                  </Provider>
               </AnimatePresence>
             </motion.div>
         </motion.div>
