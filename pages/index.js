@@ -4,7 +4,7 @@ import styles from '../styles/home.module.css'
 import { addPokemons, scrollPosition, numPokemons } from '../reducers/homePokemonReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useRef } from 'react'
-import ScreenContainer from '../components/ScreenContainer'
+import { ScreenContainer } from '../components/ScreenContainer/index'
 
 let canLoad = true
 
