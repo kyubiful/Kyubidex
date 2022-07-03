@@ -4,7 +4,7 @@
 	border-radius: 20px;
 	text-align: center;
 	color: white;
-	width: 70px;
+	width: 80px;
 	font-size: 14px;
 	padding: 4px 0px;
 	text-transform: capitalize;
@@ -62,7 +62,7 @@
 }
 
 .fighting {
-	background-color: #A890F0;
+	background-color: #C03028;
 	border-color: #7D1F1A;
 }
 
