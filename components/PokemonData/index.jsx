@@ -8,7 +8,11 @@ export const PokemonData = ({ pokemon }) => {
     <div className={styles.pokeDataContainer}>
       <p className={styles.pokeDataName}>{pokemon.name}</p>
       <div className={styles.pokeData}>
-        <Image height={150} width={150} src={pokemon.sprite} layout="fixed" priority />
+        { pokemon.sprite !== null
+          ? <Image height={150} width={150} src={pokemon.sprite} layout="fixed" priority />
+          : <div style={{ width: '150px', height: '150px' }}/>
+        }
+
         <div className={styles.pokeDataContent}>
           <p className={styles.pokeDataTitles}>
             { pokemon.types.length === 1 ? 'Type' : 'Types'}
