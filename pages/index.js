@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import PokemonCardLazy from '../components/PokemonCard/PokemonCardLazy'
+import PokemonCard from '../components/PokemonCard/index'
 import styles from '../styles/home.module.css'
 import { addPokemons, scrollPosition, numPokemons } from '../reducers/homePokemonReducer'
 import { useDispatch, useSelector } from 'react-redux'
@@ -59,7 +59,7 @@ const Home = ({ pokemons }) => {
         <div className={styles.container} onScroll={handleScroll} ref={container}>
           {
             pokemon.map((pokemon) => {
-              return <PokemonCardLazy key={pokemon.id} id={pokemon.id} name={pokemon.name} spriteUrl={pokemon.sprite} container={container}/>
+              return <PokemonCard key={pokemon.id} id={pokemon.id} name={pokemon.name} spriteUrl={pokemon.sprite} container={container}/>
             }) }
         </div>
       </ScreenContainer>

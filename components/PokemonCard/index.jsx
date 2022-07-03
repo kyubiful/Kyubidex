@@ -25,7 +25,7 @@ const PokemonCard = ({ id, name, spriteUrl, container }) => {
           onClick={handleClick}
         >
           <div className={styles.imgContainer}>
-          <Image src={spriteUrl} width={60} height={60} className={styles.pokeImage} layout="fixed" priority/>
+          <Image src={spriteUrl} width={60} height={60} className={styles.pokeImage} layout="fixed" priority={false} loading="lazy"/>
           </div>
           <div className={styles.data}>
             <p className={styles.pokeNumber}>{id}</p>
