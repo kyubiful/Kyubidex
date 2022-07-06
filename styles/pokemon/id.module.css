@@ -26,3 +26,12 @@
 .prevButton:hover {
   background-color: rgba(0, 100, 255, .6);
 }
+
+
+@media (max-width: 425px) {
+
+  .container {
+    height: 90vh;
+    max-height: 90vh;
+  }
+}

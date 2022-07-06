@@ -2,7 +2,7 @@ import { TopCase } from '../components/Case/TopCase'
 import { BottomCase } from '../components/Case/BottomCase'
 import { ButtonCase } from '../components/Case/ButtonCase'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { Provider } from 'react-redux'
 import store from '../redux/store'
@@ -19,6 +19,21 @@ const screenVariants = {
   },
   closed: {
     height: 147,
+    transition: {
+      duration: 1
+    }
+  }
+}
+
+const screenVariantsMobile = {
+  open: {
+    height: '100vh',
+    transition: {
+      duration: 1
+    }
+  },
+  closed: {
+    height: '100vh',
     transition: {
       duration: 1
     }
@@ -42,12 +57,20 @@ function MyApp ({ Component, pageProps, router }) {
   const [isOpen, setIsOpen] = useState(false)
   const [isScreenOpen, setIsScreenOpen] = useState(false)
   const [buttonIsOpen, setButtonIsOpen] = useState(false)
+  const [screenWidth, setScreenWith] = useState(false)
 
   const openDex = () => {
     setIsOpen(!isOpen)
     setButtonIsOpen(!buttonIsOpen)
     setIsScreenOpen(!isScreenOpen)
   }
+
+  useEffect(() => {
+    setScreenWith(window.innerWidth)
+    window.addEventListener('resize', () => {
+      setScreenWith(window.innerWidth)
+    })
+  }, [])
 
   return (
     <>
@@ -60,7 +83,7 @@ function MyApp ({ Component, pageProps, router }) {
         <ButtonCase onClick={openDex} buttonIsOpen={buttonIsOpen} />
         <motion.div
           className={styles.pokedexScreen}
-          variants={screenVariants}
+          variants={screenWidth > 425 ? screenVariants : screenVariantsMobile}
           animate={isOpen ? 'open' : 'closed'}
         >
             <motion.div
