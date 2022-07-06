@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Head from 'next/head'
 import { Provider } from 'react-redux'
-import store from '../store'
+import store from '../redux/store'
 
 import '../styles/globals.css'
 import styles from '../styles/global.module.css'
