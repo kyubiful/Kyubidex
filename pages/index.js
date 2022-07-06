@@ -50,6 +50,7 @@ const Home = ({ pokemons }) => {
 
   const getNextPokemons = () => {
     const url = config.url
+    console.log(`getNextPokemons: ${url}`)
     const apiUrl = `${url}/api/pokemon/scroll/${numPokemon}`
     fetch(`${apiUrl}`)
       .then(res => res.json())
@@ -73,6 +74,7 @@ const Home = ({ pokemons }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const url = config.url
+    console.log(`handleSubmit: ${url}`)
     const fd = Object.fromEntries(new FormData(e.target))
     const name = fd.pokemon
     const apiUrl = `${url}/api/pokemon/all/${name}`
@@ -143,6 +145,7 @@ const Home = ({ pokemons }) => {
 
 export async function getServerSideProps () {
   const url = config.url
+  console.log(`getServerSide: ${url}`)
   const data = await fetch(`${url}/api/pokemon/all`)
   const pokemons = await data.json()
   return {
