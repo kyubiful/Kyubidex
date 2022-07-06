@@ -5,7 +5,7 @@ const types = {
   fire: styles.fire,
   water: styles.water,
   grass: styles.grass,
-  electic: styles.electric,
+  electric: styles.electric,
   psychic: styles.psychic,
   ice: styles.ice,
   dragon: styles.dragon,

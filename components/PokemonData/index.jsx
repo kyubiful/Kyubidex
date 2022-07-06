@@ -18,10 +18,11 @@ export const PokemonData = ({ pokemon }) => {
             { pokemon.types.length === 1 ? 'Type' : 'Types'}
           </p>
           <div className={styles.pokeTypeContainer}>
-            { pokemon.types.map((type, key) => {
-              return <PokemonType key={key} type={type.type.name}/>
-            })}
-
+            {
+              pokemon.types.map((type, key) => {
+                return <PokemonType key={key} type={type.type.name}/>
+              })
+            }
           </div>
           <p className={styles.pokeDataTitles}>Abilities</p>
           <div className={styles.pokeAbilitiesContainer}>
