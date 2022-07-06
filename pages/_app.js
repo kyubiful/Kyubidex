@@ -76,31 +76,32 @@ function MyApp ({ Component, pageProps, router }) {
     <>
       <Head>
         <link rel="icon" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
       </Head>
-    <div className={styles.container}>
-      <div className={styles.pokedexCase}>
-        <TopCase/>
-        <ButtonCase onClick={openDex} buttonIsOpen={buttonIsOpen} />
-        <motion.div
-          className={styles.pokedexScreen}
-          variants={screenWidth > 425 ? screenVariants : screenVariantsMobile}
-          animate={isOpen ? 'open' : 'closed'}
-        >
-            <motion.div
-              className={styles.pokedexScreenContainer}
-              variants={contentScreenVariants}
-              animate={isScreenOpen ? 'open' : 'closed'}
-            >
-              <AnimatePresence exitBeforeEnter>
-                  <Provider store={store}>
-                    <Component {...pageProps} key={router.pathname}/>
-                  </Provider>
-              </AnimatePresence>
-            </motion.div>
-        </motion.div>
-        <BottomCase/>
+      <div className={styles.container}>
+        <div className={styles.pokedexCase}>
+          <TopCase/>
+          <ButtonCase onClick={openDex} buttonIsOpen={buttonIsOpen} />
+          <motion.div
+            className={styles.pokedexScreen}
+            variants={screenWidth > 425 ? screenVariants : screenVariantsMobile}
+            animate={isOpen ? 'open' : 'closed'}
+          >
+              <motion.div
+                className={styles.pokedexScreenContainer}
+                variants={contentScreenVariants}
+                animate={isScreenOpen ? 'open' : 'closed'}
+              >
+                <AnimatePresence exitBeforeEnter>
+                    <Provider store={store}>
+                      <Component {...pageProps} key={router.pathname}/>
+                    </Provider>
+                </AnimatePresence>
+              </motion.div>
+          </motion.div>
+          <BottomCase/>
+        </div>
       </div>
-    </div>
     </>
   )
 }
