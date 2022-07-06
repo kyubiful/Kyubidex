@@ -1,4 +1,4 @@
-import { api } from '../../../config/api.js'
+import { api } from '../../../../config/api.js'
 
 export default function handler (_req, res) {
   const apiUrl = `${api.url}pokemon/?limit=40`
