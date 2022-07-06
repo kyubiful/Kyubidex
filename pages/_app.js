@@ -52,7 +52,7 @@ function MyApp ({ Component, pageProps, router }) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
     <div className={styles.container}>
       <div className={styles.pokedexCase}>
