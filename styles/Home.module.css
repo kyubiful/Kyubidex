@@ -1,14 +1,73 @@
 .container {
   width: 100%;
-  max-height: 570px;
-  overflow-y: scroll;
   display: grid;
   grid-template-columns: 80px 80px 80px 80px;
   justify-content: center;
   align-items: center;
   justify-items: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
   gap: 6px;
   z-index: 0;
+}
+
+.pageContainer {
+  padding-top: 100px;
+  max-height: 570px;
+  min-height: 570px;
+  overflow-y: scroll;
+  padding-bottom: 100px;
+}
+
+.searchPokemonFormContainer {
+  width: 85%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.searchPokemonFormContainer form {
+  display: flex;
+  gap: 5px;
+}
+
+.searchPokemonError {
+  margin-top: 10px;
+  height: 20px;
+
+}
+
+.searchPokemonFormContainer form input[type=text] {
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #88D3F5;
+  width: 70%;
+  letter-spacing: 1.5px;
+}
+
+.searchPokemonFormContainer form input[type=submit] {
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid white;
+  background-color: #88D3F5;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
+  color: white;
+  cursor: pointer;
+  transition: all .1s ease-in;
+}
+
+.searchPokemonFormContainer form input[type=submit]:hover {
+  transform: scale(1.1);
+}
+
+.searchPokemonFormContainer form button {
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid white;
+  background-color: #88D3F5;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
+  color: white;
+  cursor: pointer;
+  transition: all .1s ease-in;
+}
+
+.searchPokemonFormContainer form button:hover {
+  transform: scale(1.1);
 }
