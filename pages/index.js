@@ -49,7 +49,8 @@ const Home = ({ pokemons }) => {
   }, [])
 
   const getNextPokemons = () => {
-    const apiUrl = `http://localhost:3000/api/pokemon/scroll/${numPokemon}`
+    const url = process.env.PUBLIC_URL
+    const apiUrl = `${url}/api/pokemon/scroll/${numPokemon}`
     fetch(`${apiUrl}`)
       .then(res => res.json())
       .then(data => {
@@ -71,9 +72,10 @@ const Home = ({ pokemons }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const url = process.env.PUBLIC_URL
     const fd = Object.fromEntries(new FormData(e.target))
     const name = fd.pokemon
-    const apiUrl = `http://localhost:3000/api/pokemon/all/${name}`
+    const apiUrl = `${url}/api/pokemon/all/${name}`
     fetch(apiUrl)
       .then(res => res.json())
       .then(data => {
