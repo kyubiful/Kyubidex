@@ -6,6 +6,7 @@ import PokemonCard from '../components/PokemonCard/index'
 import { ScreenContainer } from '../components/ScreenContainer/index'
 import { motion } from 'framer-motion'
 import styles from '../styles/home.module.css'
+import { config } from '../config/config'
 
 let canLoad = true
 
@@ -139,7 +140,8 @@ const Home = ({ pokemons }) => {
 }
 
 export async function getServerSideProps () {
-  const data = await fetch('http://0.0.0.0:3000/api/pokemon/all')
+  const url = config.url
+  const data = await fetch(`${url}/api/pokemon/all`)
   const pokemons = await data.json()
   return {
     props: {

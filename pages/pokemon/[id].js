@@ -5,6 +5,7 @@ import styles from '../../styles/pokemon/id.module.css'
 import { PokemonStats } from '../../components/PokemonStats'
 import Link from 'next/link'
 import Head from 'next/head'
+import { config } from '../../config/config'
 
 const pokemon = ({ pokemon }) => {
   return (
@@ -35,7 +36,8 @@ export default pokemon
 
 export const getServerSideProps = async (context) => {
   const id = context.params.id
-  const data = await fetch(`http://0.0.0.0:3000/api/pokemon/${id}`)
+  const url = config.url
+  const data = await fetch(`${url}/api/pokemon/${id}`)
   const pokemon = await data.json()
 
   return {
