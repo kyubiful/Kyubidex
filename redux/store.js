@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import homePokemonReducer from './reducers/homePokemonReducer'
+import home from './states/home'
 
 const store = configureStore({
   reducer: {
-    homePokemon: homePokemonReducer
+    home
   }
 })
 
