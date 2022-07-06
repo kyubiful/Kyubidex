@@ -35,7 +35,7 @@ export default pokemon
 
 export const getServerSideProps = async (context) => {
   const id = context.params.id
-  const data = await fetch(`http://localhost:3000/api/pokemon/${id}`)
+  const data = await fetch(`http://0.0.0.0:3000/api/pokemon/${id}`)
   const pokemon = await data.json()
 
   return {

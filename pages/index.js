@@ -139,7 +139,7 @@ const Home = ({ pokemons }) => {
 }
 
 export async function getServerSideProps () {
-  const data = await fetch('http://localhost:3000/api/pokemon/all')
+  const data = await fetch('http://0.0.0.0:3000/api/pokemon/all')
   const pokemons = await data.json()
   return {
     props: {
