@@ -25,7 +25,7 @@ const variants = {
   }
 }
 
-const Home = ({ pokemons }) => {
+const Home = ({ pokemons, apiUrl }) => {
   const dispatch = useDispatch()
 
   const pokemon = useSelector((state) => state.home.pokemons)
@@ -49,10 +49,8 @@ const Home = ({ pokemons }) => {
   }, [])
 
   const getNextPokemons = () => {
-    const url = config.url
-    console.log(`getNextPokemons: ${url}`)
-    const apiUrl = `${url}/api/pokemon/scroll/${numPokemon}`
-    fetch(`${apiUrl}`)
+    const url = `${apiUrl}/api/pokemon/scroll/${numPokemon}`
+    fetch(`${url}`)
       .then(res => res.json())
       .then(data => {
         dispatch(addPokemons(data.pokemonList))
@@ -73,12 +71,10 @@ const Home = ({ pokemons }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const url = config.url
-    console.log(`handleSubmit: ${url}`)
     const fd = Object.fromEntries(new FormData(e.target))
     const name = fd.pokemon
-    const apiUrl = `${url}/api/pokemon/all/${name}`
-    fetch(apiUrl)
+    const url = `${apiUrl}/api/pokemon/all/${name}`
+    fetch(url)
       .then(res => res.json())
       .then(data => {
         if (data.pokemon !== undefined) {
@@ -145,12 +141,12 @@ const Home = ({ pokemons }) => {
 
 export async function getServerSideProps () {
   const url = config.url
-  console.log(`getServerSide: ${url}`)
   const data = await fetch(`${url}/api/pokemon/all`)
   const pokemons = await data.json()
   return {
     props: {
-      pokemons: pokemons.pokemonList
+      pokemons: pokemons.pokemonList,
+      apiUrl: url
     }
   }
 }
